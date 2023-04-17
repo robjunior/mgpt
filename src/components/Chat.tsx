@@ -24,9 +24,9 @@ const Chat = () => {
         fetchMessages();
     }, []);
 
-    const handleSendMessage = async (text: string) => {
+    const handleSendMessage = async (message: string) => {
         const response = await api.post<Message>('/message', {
-            text
+            message
         });
         setMessages([...messages, response.data]);
         scrollToBottom();
